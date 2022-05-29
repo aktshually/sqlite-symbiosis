@@ -1,0 +1,67 @@
+{
+	"name": "base-project-symbiosis-plugin",
+	"version": "0.0.1",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"license": "Apache-2.0",
+	"author": "Techmmunity",
+	"description": "Base project to plugins for @techmmunity/symbiosis",
+	"homepage": "https://github.com/techmmunity/base-project-symbiosis-plugin#readme",
+	"bugs": {
+		"url": "https://github.com/techmmunity/base-project-symbiosis-plugin/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/techmmunity/base-project-symbiosis-plugin.git"
+	},
+	"keywords": [
+		"orm",
+		"odm",
+		"nosql",
+		"typescript",
+		"database",
+		"data-mapper",
+		"object-mapper",
+		"techmmunity-symbiosis"
+	],
+	"peerDependencies": {
+		"@techmmunity/symbiosis": "^0.0.30",
+		"@techmmunity/symbiosis-cli": "^0.0.4",
+		"reflect-metadata": "^0.1.13",
+		"typescript": "^4.5.5"
+	},
+	"peerDependenciesMeta": {
+		"@techmmunity/symbiosis-cli": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"@techmmunity/eslint-config": "^5.2.2",
+		"@techmmunity/symbiosis": "^0.0.31",
+		"@techmmunity/symbiosis-cli": "^0.0.4",
+		"@types/jest": "^27.4.0",
+		"@vercel/ncc": "^0.33.2",
+		"eslint": "^8.9.0",
+		"husky": "^7.0.4",
+		"jest": "^27.5.1",
+		"lint-staged": "^12.3.3",
+		"prettier": "^2.5.1",
+		"reflect-metadata": "^0.1.13",
+		"ts-jest": "^27.1.3",
+		"ts-node": "^10.5.0",
+		"typescript": "^4.5.5"
+	},
+	"scripts": {
+		"prepare": "husky install",
+		"ts-node": "ts-node",
+		"test": "jest",
+		"test:cov": "jest --coverage --passWithNoTests",
+		"build": "ncc build src/index.ts -o dist -s -m -e reflect-metadata",
+		"format": "eslint . --fix --quiet",
+		"lint": "eslint . --quiet",
+		"upgrade:dependencies": "yarn upgrade-interactive --latest",
+		"husky:pre-commit": "tsc && lint-staged",
+		"lk": "yarn build && cp package.json dist/package.json && cd dist && yarn link && cd ..",
+		"ulk": "yarn unlink && yarn lk"
+	}
+}
