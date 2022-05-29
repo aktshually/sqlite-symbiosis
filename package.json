@@ -1,18 +1,18 @@
 {
-	"name": "base-project-symbiosis-plugin",
+	"name": "sqlite-symbiosis-plugin",
 	"version": "0.0.1",
 	"main": "index.js",
 	"types": "index.d.ts",
 	"license": "Apache-2.0",
-	"author": "Techmmunity",
-	"description": "Base project to plugins for @techmmunity/symbiosis",
-	"homepage": "https://github.com/techmmunity/base-project-symbiosis-plugin#readme",
+	"author": "End313234",
+	"description": "SQLite support for Symbiosis",
+	"homepage": "https://github.com/End313234/sqlite-symbiosis",
 	"bugs": {
-		"url": "https://github.com/techmmunity/base-project-symbiosis-plugin/issues"
+		"url": "https://github.com/End313234/sqlite-symbiosis/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/techmmunity/base-project-symbiosis-plugin.git"
+		"url": "git+https://github.com/End313234/sqlite-symbiosis.git"
 	},
 	"keywords": [
 		"orm",
@@ -22,7 +22,8 @@
 		"database",
 		"data-mapper",
 		"object-mapper",
-		"techmmunity-symbiosis"
+		"techmmunity-symbiosis",
+		"sqlite"
 	],
 	"peerDependencies": {
 		"@techmmunity/symbiosis": "^0.0.30",
@@ -63,5 +64,8 @@
 		"husky:pre-commit": "tsc && lint-staged",
 		"lk": "yarn build && cp package.json dist/package.json && cd dist && yarn link && cd ..",
 		"ulk": "yarn unlink && yarn lk"
+	},
+	"dependencies": {
+		"sqlite": "^4.1.1"
 	}
 }
