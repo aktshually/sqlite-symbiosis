@@ -37,7 +37,7 @@
 		}
 	},
 	"devDependencies": {
-		"@techmmunity/eslint-config": "^5.2.2",
+		"@techmmunity/eslint-config": "^5.2.4",
 		"@techmmunity/symbiosis": "^0.0.31",
 		"@techmmunity/symbiosis-cli": "^0.0.4",
 		"@types/jest": "^27.4.0",
